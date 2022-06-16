@@ -15,6 +15,9 @@ return new class extends Migration
     {
         Schema::create('posts', function (Blueprint $table) {
             $table->id();
+			$table->bigInteger('user_id')->comment('사용자아이디');
+			$table->string('subject')->default('')->comment('제목');
+			$table->longText('contents')->comment('게시물 내용');
             $table->timestamps();
         });
     }
